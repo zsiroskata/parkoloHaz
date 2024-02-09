@@ -46,8 +46,8 @@ namespace pHaz
             Console.WriteLine(tizenketto(emeletek));
 
 
-            Console.WriteLine("\n13.feladat");
-
+            Console.WriteLine("\n13.feladat és a 14. feladat");
+            tizenharom(emeletek);
 
         }
         static void minimum(List<Emelet> emeletek)
@@ -109,7 +109,8 @@ namespace pHaz
                 atlag += item;
             }
             atlag = Math.Round(atlag / (12 * 6), 2);
-            Console.WriteLine(atlag);
+            Console.WriteLine($"átlag: {atlag}");
+
             int db = 0;
             for (int i = 0; i < emeletek.Count; i++)
             {
@@ -135,8 +136,6 @@ namespace pHaz
                     }
                 }
             }
-
-
             Console.WriteLine($"nagyobb, mint az átlag: {db}");
 
 
@@ -151,11 +150,7 @@ namespace pHaz
                     }
                 }
             }
-
-
             Console.WriteLine($"kisebb, mint az átlag: {db}");
-
-
         }
 
 
@@ -174,6 +169,7 @@ namespace pHaz
                     }
                 }
             }
+            Console.WriteLine("file létre hozva");
         }
 
 
@@ -209,7 +205,30 @@ namespace pHaz
 
         static void tizenharom(List<Emelet> emeletek)
         {
+            List<string> lista = new();
+            using (var sw = new StreamWriter(path: @"..\..\..\src\tizenegy.txt", append: true)) 
+            {
+                sw.WriteLine("13.feladat\n");
+                const int maxHely = 15;
+                int kocsi = 0;
+                for (int i = 0; i < emeletek.Count; i++)
+                {
+                    for (int j = 0; j < emeletek[i].szektorSzam.Count; j++)
+                    {
+                        kocsi += maxHely - emeletek[i].szektorSzam[j];
+                    }
+                    Console.WriteLine($"{kocsi} szabad hely van");
+                    lista.Add($"{i + 1}.szint - {kocsi}");
+                    kocsi = 0;
 
+                }
+
+                foreach (var item in lista)
+                {
+                    sw.WriteLine(item);
+                    
+                }
+            }
 
         }
 

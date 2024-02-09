@@ -1,2 +1,16 @@
 Sas - 2
 Lajhár - 1
+13.feladat
+
+1.szint - 52
+2.szint - 61
+3.szint - 59
+4.szint - 65
+5.szint - 52
+6.szint - 22
+7.szint - 30
+8.szint - 17
+9.szint - 47
+10.szint - 52
+11.szint - 45
+12.szint - 16

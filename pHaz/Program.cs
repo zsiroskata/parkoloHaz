@@ -181,17 +181,7 @@ namespace pHaz
                 valami.Add(emeletek[i].szektorSzam.Sum());
             }
 
-
-            int max = valami[0];
-            for (int i = 0; i < valami.Count; i++)
-            {
-                if (valami[i] < max)
-                {
-                    max = valami[i];
-                }
-            }
-
-
+            int max = valami.Max();
             if (max == valami[0])
             {
                 return "igaz";
